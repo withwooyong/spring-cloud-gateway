@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: eureka-server
+  cloud:
+    gateway:
+      routes:
+        - id: api-user
+          uri: http://localhost:8081
+          predicates:
+            - Path=/user/**
+        - id: api-auth
+            uri: http://localhost:8082
+            predicates:
+              - Path=/auth/**
+        - id: api-order
+            uri: http://localhost:8091
+            predicates:
+              - Path=/order/**
+        - id: api-pay
+          uri: http://localhost:8092
+          predicates:
+            - Path=/pay/**
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
