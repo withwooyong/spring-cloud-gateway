@@ -2,6 +2,7 @@ package com.spring.cloud.springcloudgateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * 인증 및 권한 부여
@@ -15,8 +16,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * IP허용 목록에 추가
  * https://velog.io/@tedigom/MSA-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-3API-Gateway-nvk2kf0zbj
  * http://localhost:8080/user/execute?userName=Ted&orderName=MacBook&payType=kakao&price=2000
+ * http://localhost:8080/auth/token?userName=token
  */
 @SpringBootApplication
+@EnableEurekaClient
 public class SpringCloudGatewayApplication {
 
     public static void main(String[] args) {
